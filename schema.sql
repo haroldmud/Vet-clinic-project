@@ -17,4 +17,6 @@ CREATE TABLE owner ( ID int, Full_name varchar(100), Age int, PRIMARY KEY (ID)  
 -----SPICIES TABLE-----
 CREATE TABLE species ( ID INT, Name VARCHAR(100), PRIMARY KEY (ID));
 ALTER TABLE species DROP COLUMN ID;
-ALTER TABLE species ADD ID SERIAL PRIMARY KEY;
+ALTER TABLE animals ADD species_id int REFERENCES species(id);
+ALTER TABLE animals ADD owner_id int REFERENCES owners(id);
+ALTER TABLE REMOVE species;

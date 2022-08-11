@@ -53,17 +53,17 @@ UPDATE animals SET species_id = 'digimon' WHERE Name like '%mon';
 
 UPDATE animals SET species_id = 'pokemon' WHERE species_id = 'Unspecified';
 
-UPDATE animals SET owner_id = 'Sam Smith' WHERE name = 'Agumon';
-UPDATE animals SET owner_id = 'Sam Smith' WHERE name = 'Agumon';
-UPDATE animals SET owner_id = 'Jennifer Orwell' WHERE name = 'Gabumon';
-UPDATE animals SET owner_id = 'Jennifer Orwell' WHERE name = 'Pikachu';
-UPDATE animals SET owner_id = 'Bob' WHERE name = 'Devimon';
-UPDATE animals SET owner_id = 'Bob' WHERE name = 'Plantmon';
-UPDATE animals SET owner_id = 'Melody Pond' WHERE name = 'Charmander';
-UPDATE animals SET owner_id = 'Melody Pond' WHERE name = 'Squirtle';
-UPDATE animals SET owner_id = 'Melody Pond' WHERE name = 'Blossom';
-UPDATE animals SET owner_id = 'Dean Winchester' WHERE name = 'Angemon';
-UPDATE animals SET owner_id = 'Dean Winchester' WHERE name = 'Boarmon';
+
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Sam Smith') WHERE name = 'Agumon';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Jennifer Orwell') WHERE name = 'Gabumon';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Jennifer Orwell') WHERE name = 'Pikachu';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Bob') WHERE name = 'Devimon';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Bob') WHERE name = 'Plantmon';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Melody Pond') WHERE name = 'Charmander';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Melody Pond') WHERE name = 'Squirtle';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Melody Pond') WHERE name = 'Blossom';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Dean Winchester') WHERE name = 'Angemon';
+UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Dean Winchester') WHERE name = 'Boarmon';
 
 
 
