@@ -48,10 +48,12 @@ UPDATE animals SET Weight_kg = Weight_kg * -1;
 UPDATE animals SET Weight_kg = Weight_kg * -1 WHERE Weight_kg < 0 ;
 
 UPDATE animals SET species_id = 'Unspecified';
+UPDATE animals SET species_id = (SELECT id from species WHERE name = 'Digimon') WHERE name like '%mon';
+UPDATE animals SET species_id = (SELECT id from species WHERE name = 'Pokemon') WHERE species_id IS NULL;
 
-UPDATE animals SET species_id = 'digimon' WHERE Name like '%mon';
+-- UPDATE animals SET species_id = 'digimon' WHERE Name like '%mon';
 
-UPDATE animals SET species_id = 'pokemon' WHERE species_id = 'Unspecified';
+-- UPDATE animals SET species_id = 'pokemon' WHERE species_id = 'Unspecified';
 
 
 UPDATE animals SET owner_id = (SELECT id from owners WHERE full_name = 'Sam Smith') WHERE name = 'Agumon';
@@ -94,7 +96,6 @@ INSERT INTO species ( ID, Name )
 VALUES ( 2, 'Digimon' );
 SELECT COUNT(*) FROM animals WHERE species_id = 'Pokemon';
 SELECT COUNT(*) FROM animals WHERE species_id = 'Digimon';
-
 
 ----INNER JOIN-----
 

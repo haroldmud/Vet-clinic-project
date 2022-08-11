@@ -12,7 +12,7 @@ ALTER TABLE owner  ADD CONSTRAINT ID INT FOREIGN KEY ( full_name ) REFERENCES an
 
 
 -----OWNER TABLE----
-CREATE TABLE owner ( ID int, Full_name varchar(100), Age int, PRIMARY KEY (ID)  );
+CREATE TABLE owner ( ID int NOT NULL IDENTITY(1,1), Full_name varchar(255), Age int, PRIMARY KEY (ID)  );
 
 -----SPICIES TABLE-----
 CREATE TABLE species ( ID INT, Name VARCHAR(100), PRIMARY KEY (ID));
