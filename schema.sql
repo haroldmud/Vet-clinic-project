@@ -29,7 +29,7 @@ CREATE TABLE visits (id SERIAL PRIMARY KEY, animal varchar(100), vet varchar(100
 
 ALTER TABLE animals ADD vet_id varchar(100);
 
--- data to insert inorder to achieve perfomance
+--- data to insert inorder to achieve perfomance
 
 
 --- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
