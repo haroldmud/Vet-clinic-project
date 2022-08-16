@@ -39,7 +39,7 @@ INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id F
 insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
 
 
--- the query to checktime execution
+--- the query to checktime execution
 explain analyze SELECT COUNT(*) FROM visits where animals_id = 4;
 
 
